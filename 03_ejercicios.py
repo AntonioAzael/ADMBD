@@ -129,7 +129,7 @@ def update_01():
     """Actualizar email de Carlos Mendoza (id=2) a carlos.m@email.com."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("")  
+    cursor.execute("UPDATE estudiantes SET email = 'carlos.m@email.com' WHERE id = 2")  
     conn.commit()
     print("[OK] Email actualizado.")
     conn.close()
@@ -139,7 +139,7 @@ def update_02():
     """Cambiar créditos de Inglés Técnico (id=4) a 3."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("")  
+    cursor.execute("UPDATE cursos SET creditos = 3 WHERE id = 4")  
     conn.commit()
     print("[OK] Creditos actualizados.")
     conn.close()
@@ -149,7 +149,7 @@ def update_03():
     """Poner nota 14.5 a Sofía Ramírez (id=5) en Programación Python (curso_id=2)."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("")  
+    cursor.execute("UPDATE inscripciones SET nota = 14.5 WHERE estudiante_id = 5 AND curso_id = 2")  
     conn.commit()
     print("[OK] Nota actualizada.")
     conn.close()
