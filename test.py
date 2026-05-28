@@ -6,4 +6,3 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS clientes
 cursor.execute("INSERT INTO clientes (nombre, telefono) VALUES ('Antonio', '6644590201')")
 conn.commit()
 conn.close()
-
