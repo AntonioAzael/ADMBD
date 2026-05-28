@@ -163,7 +163,7 @@ def delete_01():
     """Eliminar la inscripción con id=5."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("")  
+    cursor.execute("DELETE FROM inscripciones WHERE id = 5")  
     conn.commit()
     print("[OK] Inscripcion eliminada.")
     conn.close()
@@ -173,7 +173,7 @@ def delete_02():
     """Eliminar inscripciones con nota NULL."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("")  
+    cursor.execute("DELETE FROM inscripciones WHERE nota IS NULL")  
     conn.commit()
     print(f"[OK] {cursor.rowcount} inscripcion(es) eliminada(s).")
     conn.close()
@@ -183,7 +183,7 @@ def delete_03():
     """Eliminar cursos sin estudiantes inscritos (usar NOT IN)."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("")  
+    cursor.execute("DELETE FROM cursos WHERE id NOT IN (SELECT DISTINCT curso_id FROM inscripciones)")  
     conn.commit()
     print(f"[OK] {cursor.rowcount} curso(s) eliminado(s).")
     conn.close()
